@@ -23,7 +23,13 @@ https://grouplens.org/datasets/movielens/
 
 ## Screenshots
 
-O frontend web foi construído com um layout leve e parecido com os trabalhos anteriores, usando um painel central para seleção de usuários e exibição dos resultados.
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:flex-start;">
+  <img src="frontend/screenshots/Screenshot%20from%202026-06-01%2016-32-31.png" alt="Tela principal" style="width:48%;max-width:600px">
+  <img src="frontend/screenshots/Screenshot%20from%202026-06-01%2016-33-15.png" alt="Recomendações" style="width:48%;max-width:600px">
+  <img src="frontend/screenshots/Screenshot%20from%202026-06-01%2016-33-23.png" alt="Comparação - parte 1" style="width:48%;max-width:600px">
+  <img src="frontend/screenshots/Screenshot%20from%202026-06-01%2016-33-36.png" alt="Comparação - parte 2" style="width:48%;max-width:600px">
+</div>
+
 
 
 ## Instalação
