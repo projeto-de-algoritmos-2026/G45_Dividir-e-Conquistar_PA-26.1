@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Filmes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="logo">Recomendador<span class="accent">.films</span></div>
+            <p class="subtitle">Dividir e Conquistar — sistema de recomendação</p>
+        </header>
+
+        <main class="main">
+            <section class="card controls">
+                <h2>Escolha um usuário</h2>
+                <div class="row">
+                    <div style="flex:1;display:flex;gap:0.6rem;align-items:center;">
+                        <select id="userA"></select>
+                        <select id="userB"></select>
+                    </div>
+                    <div class="btns">
+                        <button id="btnTop" class="btn">Top compatíveis (pessoas)</button>
+                        <button id="btnRecommend" class="btn primary">Recomendar filmes</button>
+                    </div>
+                </div>
+                <div style="margin-top:0.6rem;display:flex;gap:0.6rem;align-items:center;">
+                    <button id="btnToggleCompare" class="btn">Comparar duas pessoas</button>
+                    <button id="btnRunCompare" class="btn" style="display:none;">Executar comparação</button>
+                    <p class="hint">"Top compatíveis" lista pessoas com gostos semelhantes; ative "Comparar" para escolher um segundo usuário e então executar a comparação.</p>
+                </div>
+            </section>
+
+            <section class="card results" id="results" style="display:none;">
+                <div class="results-header">
+                    <h3 id="resultsTitle">Recomendações</h3>
+                    <button id="btnCloseResults" class="close">✕</button>
+                </div>
+                <div id="resultsBody"></div>
+            </section>
+        </main>
+
+        <footer class="footer">Dataset MovieLens • Processamento local no backend</footer>
+    </div>
+</body>
+</html>
