@@ -11,34 +11,34 @@
 <body>
     <div class="app">
         <header class="header">
-            <div class="logo">Recomendador<span class="accent">.films</span></div>
-            <p class="subtitle">Dividir e Conquistar — sistema de recomendação</p>
+            <div class="logo">Recomendador de <span class="accent">Filmes</span></div>
+            <p class="subtitle">Escolha uma pessoa, veja filmes sugeridos e compare gostos de forma simples</p>
         </header>
 
         <main class="main">
             <section class="card controls">
-                <h2>Escolha um usuário</h2>
+                <h2>Escolha uma pessoa</h2>
                 <div class="row">
                     <div style="flex:1;display:flex;gap:0.6rem;align-items:center;">
                         <select id="userA"></select>
                         <select id="userB"></select>
                     </div>
                     <div class="btns">
-                        <button id="btnTop" class="btn">Top compatíveis (pessoas)</button>
-                        <button id="btnRecommend" class="btn primary">Recomendar filmes</button>
+                        <button id="btnTop" class="btn btn-soft">Ver pessoas parecidas</button>
+                        <button id="btnRecommend" class="btn btn-main">Ver filmes recomendados</button>
                     </div>
                 </div>
                 <div style="margin-top:0.6rem;display:flex;gap:0.6rem;align-items:center;">
-                    <button id="btnToggleCompare" class="btn">Comparar duas pessoas</button>
-                    <button id="btnRunCompare" class="btn" style="display:none;">Executar comparação</button>
-                    <p class="hint">"Top compatíveis" lista pessoas com gostos semelhantes; ative "Comparar" para escolher um segundo usuário e então executar a comparação.</p>
+                    <button id="btnToggleCompare" class="btn btn-ghost">Comparar com outra pessoa</button>
+                    <button id="btnRunCompare" class="btn btn-compare" style="display:none;">Fazer comparação</button>
+                    <p class="hint"><strong>Pessoas parecidas:</strong> mostra quem tem gostos próximos. <strong>Comparar:</strong> abre o segundo campo para ver dois perfis lado a lado.</p>
                 </div>
             </section>
 
             <section class="card results" id="results" style="display:none;">
                 <div class="results-header">
                     <h3 id="resultsTitle">Recomendações</h3>
-                    <button id="btnCloseResults" class="close">✕</button>
+                    <button id="btnCloseResults" class="close" aria-label="Fechar resultados">✕</button>
                 </div>
                 <div id="resultsBody"></div>
             </section>

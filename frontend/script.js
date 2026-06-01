@@ -98,18 +98,31 @@ async function getCompare(){
         const data = await resp.json();
         if(data.error){ showResults('Erro', `<p>${escapeHtml(data.error)}</p>`); return; }
 
-        let html = '';
+        let html = '<div class="compare-summary">';
         if(data.inversions === -1){
-            html += `<p>Filmes em comum: ${data.common} — insuficiente para comparar (mínimo 5).</p>`;
+            html += `<div class="compare-metric compare-metric-wide"><span class="compare-label">Filmes em comum</span><strong class="compare-value">${data.common}</strong></div>`;
+            html += `</div><div class="compare-note">Ainda não há filmes em comum suficientes para comparar. É preciso no mínimo 5.</div>`;
         } else {
-            html += `<p>Filmes em comum: <strong>${data.common}</strong></p>`;
-            html += `<p>Inversões: <strong>${data.inversions}</strong></p>`;
-            html += `<p>Compatibilidade: <strong>${data.compat}%</strong></p>`;
+            html += `
+                <div class="compare-metric">
+                    <span class="compare-label">Filmes em comum</span>
+                    <strong class="compare-value">${data.common}</strong>
+                </div>
+                <div class="compare-metric">
+                    <span class="compare-label">Inversões</span>
+                    <strong class="compare-value">${data.inversions}</strong>
+                </div>
+                <div class="compare-metric">
+                    <span class="compare-label">Compatibilidade</span>
+                    <strong class="compare-value">${data.compat}%</strong>
+                </div>`;
+            html += '</div>';
             if(data.shared && data.shared.length){
-                html += '<h4>Filmes em comum</h4>';
-                html += '<div>' + data.shared.slice(0,50).map(s =>
-                    `<div class="recommendation"><div>${escapeHtml(s.title)}</div><div class="rec-rating">A: ${s.rating_a.toFixed(1)} — B: ${s.rating_b.toFixed(1)}</div></div>`
-                ).join('') + '</div>';
+                html += '<div class="shared-section">';
+                html += '<div class="shared-header"><h4>Filmes em comum</h4></div>';
+                html += '<div class="shared-list">' + data.shared.slice(0,50).map(s =>
+                    `<div class="recommendation shared-item"><div class="rec-title">${escapeHtml(s.title)}</div><div class="shared-ratings">A: ${s.rating_a.toFixed(1)} <span>•</span> B: ${s.rating_b.toFixed(1)}</div></div>`
+                ).join('') + '</div></div>';
             }
         }
         showResults('Comparação entre usuários', html);
@@ -143,11 +156,11 @@ document.addEventListener('DOMContentLoaded', async ()=>{
             if(showing){
                 selB.style.display = 'none';
                 btnRun.style.display = 'none';
-                btnToggle.textContent = 'Comparar duas pessoas';
+                btnToggle.textContent = 'Comparar com outra pessoa';
             } else {
                 selB.style.display = 'inline-block';
                 btnRun.style.display = 'inline-block';
-                btnToggle.textContent = 'Cancelar comparação';
+                btnToggle.textContent = 'Fechar comparação';
             }
         });
     }
