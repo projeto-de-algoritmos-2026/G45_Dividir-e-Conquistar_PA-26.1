@@ -130,7 +130,15 @@ Como usar o frontend:
 
 ## Vídeo de Apresentação
 
-Ainda não adicionado.
+<p align="center">
+  Neste vídeo, apresentamos os trabalhos desenvolvidos, abordando os principais conceitos aplicados ao longo do projeto, e seus funcionamentos.
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/ooWDZm2k7m8?si=7DYcMLwlTLoMsz5I">
+    ▶ Assista no YouTube
+  </a>
+</p>
 
 ## Outros
 
